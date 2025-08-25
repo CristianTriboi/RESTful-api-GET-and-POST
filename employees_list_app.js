@@ -4,6 +4,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
+const cors = require('cors');
+
+
 //Replace the password as well as localhost in the line below
 const uri =  "mongodb://root:your_mongodb_password@localhost:27017";
 mongoose.connect(uri,{'dbName':'employeeDB'});
@@ -31,3 +34,6 @@ app.post('/api/add_employee', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+// Enable CORS for all routes
+app.use(cors());
