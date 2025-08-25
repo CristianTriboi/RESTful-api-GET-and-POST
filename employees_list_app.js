@@ -6,6 +6,7 @@ const app = express();
 const port = 3000;
 const cors = require('cors');
 
+
 //Replace the password as well as localhost in the line below
 const uri =  "mongodb://root:your_mongodb_password@localhost:27017";
 mongoose.connect(uri,{'dbName':'employeeDB'});
